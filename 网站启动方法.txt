@@ -1,0 +1,10 @@
+要求：
+1、电脑系统在Windows10及以上、linux ubuntu服务端22.04.2 LTS及以上更新的系统
+2、电脑中配置有3.x版本的python环境
+
+步骤：
+1、将network_breaken.7z中的文件解压到文件夹内
+2、若是linux系统请直接到达第4步，若是Windows系统，请在network_breaken文件夹中打开powershell，使用cd指令进入web/Scripts/
+3、使用命令.\activate，而后使用cd命令回到network_breaken文件夹
+4、使用命令python manage.py runserver XXXX(此处的XXXX需要是纯数字，可以随意，若报错请换一个使用)
+5、访问网站http://localhosts:XXXX(此处的XXXX与第4步的XXXX相同)
