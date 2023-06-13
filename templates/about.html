@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block body_type %}
+<body class="sub_page">
+{% endblock body_type%}
+
+{% block about %}
+<section class="about_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+              关于我们
+            </h2>
+          </div>
+          <p>
+            我们是来自于福建省永定一中的学生，为了我们的研究报告而开发这个网站。
+          </p>
+          <p>
+            我们在这里发布我们搜集到的资料，并给予我们对于网络瘫痪预案的研究成果，我们将这些数据统一整理放在网站的数据库中。
+          </p>
+          <p>
+            我们也在这个平台上制作了论坛，供有需要的人在这里寻找关于网络瘫痪的回答。
+          </p>
+          <div class="heading_container">
+            <h2>
+              后续网站发展
+            </h2>
+          </div>
+          <li>
+            我们正在制作接口来欢迎有意着加入我们的网站建设维护，制作的接口将发布在GitHub中……
+          </li>
+          <li>
+            也许我们会不断继续更新网站资料库，以适应现代设备的迭代……
+          </li>
+          <li>
+            我们正在开发搜索功能，希望能够帮助您进行以下操作，如：
+            <p>进入GitHub的网站加速</p>
+            <p>帮助您更快的在权威平台上搜索有关网络瘫痪的资料</p>
+          </li>
+          <div class="heading_container">
+            <h2>
+              来自网站开发者：sunmooncat
+            </h2>
+          </div>
+          <img src="{% static 'images/logo_black.png' %}" alt="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <iframe src="http://fjydyz.net/index.php" width="600" height="1200px" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock about %}

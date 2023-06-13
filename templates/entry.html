@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block body_type %}
+<body class="sub_page">
+{% endblock body_type%}
+
+
+{% block slider %}
+<section class="brand_section layout_padding">
+	<div class="container">
+		<div class="heading_container">
+			<h2>
+				{{title}}
+			</h2>
+		</div>
+	</div>
+</section>
+
+{% endblock slider %}
+
+
+{% block topic %}
+<section class="brand_section layout_padding">
+	<div class="container">
+		<div class="brand_container layout_padding2">
+			<ul>
+					{% for data in datas %}
+					<div class="t-name">
+						<h3>
+							<a href="{% url 'data' data.id %}">{{ data }}</a>
+						</h3>
+					</div>
+				{% empty %}
+					<div>
+						<h3>
+							还没有任何数据呢
+						</h3>
+					</div>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+</section>
+{% endblock topic %}

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block body_type %}
+<body class="sub_page">
+{% endblock body_type%}
+
+
+{% block slider %}
+<section class="brand_section layout_padding">
+	<div class="container">
+		<div class="heading_container">
+			<h2>
+				资料库
+			</h2>
+		</div>
+	</div>
+</section>
+
+{% endblock slider %}
+
+
+{% block topic %}
+<section class="brand_section layout_padding">
+	<div id="accordion">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="detail-box">
+						<div class="tab_container">
+							<div class="heading_container">
+                				<h2>
+                  					单击主题显示条目
+                				</h2>
+              				</div>
+                			<div class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                			<hr>
+                				<div cass="number">
+                    				<h5>
+                    					01
+                    				</h5>
+                  				</div>
+                  			
+                  				<div class="t-name">
+                    				<h5>
+                    					{{num1}}
+                    				</h5>
+                  				</div>
+                			</div>
+                			<div class="t-link-box" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="flase" aria-controls="collapseTwo">
+                			<hr>
+                				<div cass="number">
+                    				<h5>
+                    					02
+                    				</h5>
+                  				</div>
+                  			
+                  				<div class="t-name">
+                    				<h5>
+                    					{{num2}}
+                    				</h5>
+                  				</div>
+                			</div>
+                			<div class="t-link-box" data-toggle="collapse" data-target="#collapseThree" aria-expanded="flase" aria-controls="collapseThree">
+                			<hr>
+                				<div cass="number">
+                    				<h5>
+                    					03
+                    				</h5>
+                  				</div>
+
+                  				<div class="t-name">
+                    				<h5>
+                    					{{num3}}
+                    				</h5>
+                  				</div>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+            <div class="col-md-6">
+            	<div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+            		<div class="img_container ">
+            			<div class="box b-1">
+            				{{num1}}
+            				{% for entry in entrys1 %}
+            				<li>
+            					<a href="{% url 'entry' entry.id %}">{{ entry }}</a>
+            				</li>
+            				{% endfor %}
+            			</div>
+            		</div>
+            	</div>
+            	<div class="collapse show" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
+            		<div class="img_container ">
+            			<div class="box b-1">
+            				{{num2}}
+            				{% for entry in entrys2 %}
+            				<li>
+            					<a href="{% url 'entry' entry.id %}">{{ entry }}</a>
+            				</li>
+            				{% endfor %}
+            			</div>
+            		</div>
+            	</div>
+            	<div class="collapse show" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
+            		<div class="img_container ">
+            			<div class="box b-1">
+            				{{num3}}
+            				{% for entry in entrys3 %}
+            				<li>
+            					<a href="{% url 'entry' entry.id %}">{{ entry }}</a>
+            				</li>
+            				{% endfor %}
+            			</div>
+            		</div>
+            	</div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+
+</section>
+{% endblock topic %}

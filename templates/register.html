@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block body_type %}
+<body class="sub_page">
+{% endblock body_type%}
+
+
+
+{% block slider %}
+<section class="brand_section layout_padding">
+  <div class="container">
+    <h2>
+      <a href="{% url 'index' %}">返回</a>
+    </h2>
+    <div class="heading_container">
+      <h2>
+        
+      </h2>
+    </div>
+    <div class="col-md-6">
+      <div class="heading_container">
+        <h1>
+         注册
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock slider %}
+
+<!-- users section -->
+{% block users %}
+<section class="contact_section layout_padding">
+  <div class="container">
+    <div class='row'>
+      {% if form.errors %}
+        <h3>
+          注册出现错误。
+        </h3>
+      {% endif %}
+      <form action="{% url 'register' %}" method='POST'>
+        {% csrf_token %}
+        {{ form.as_div }}
+        <div class="d-flex ">
+          <button>注册</button>
+        </div>
+        <input type="hidden" name="next" value="{% url 'index' %}">
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock users %}
+<!-- end users section -->

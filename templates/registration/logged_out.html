@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block body_type %}
+<body class="sub_page">
+{% endblock body_type%}
+
+
+
+{% block slider %}
+<section class="brand_section layout_padding">
+  <div class="container">
+    <h2>
+      <a href="{% url 'index' %}">返回</a>
+    </h2>
+    <div class="heading_container">
+      <h2>
+        
+      </h2>
+    </div>
+    <div class="col-md-6">
+      <div class="heading_container">
+        <h1>
+         您已登出
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock slider %}

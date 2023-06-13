@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block body_type %}
+<body class="sub_page">
+{% endblock body_type%}
+
+
+
+{% block slider %}
+<section class="brand_section layout_padding">
+  <div class="container">
+    <h2>
+      <a href="{% url 'forum' %}">返回</a>
+    </h2>
+    <div class="heading_container">
+      <h2>
+        
+      </h2>
+    </div>
+    <div class="col-md-6">
+      <div class="heading_container">
+        <h1>
+         {{ title }}
+        </h1>
+      </div>
+      <div>
+        <h3>
+          时间：{{blog.data_added}}
+        </h3>
+      </div>
+      <div>
+        <h3>
+          来自：{{blog.owner}}
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock slider %}
+
+<!-- forum section -->
+{% block forum %}
+<section class="trending_section layout_padding">
+	<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>
+          {{text}}
+       </h5>
+      </div>
+      <div class="col-md-6">
+       <div class="brand_container layout_padding2">
+        <div class="heading_container">
+          <h2>
+            评论
+          </h2>
+        </div>
+        <ul>
+          {% for comment in comments %}
+             <div class="t-name">
+               <li>
+               <h6>
+                 {{comment.owner}}-----{{comment.data_added}}
+               </h6>
+                <h5>
+                  {{ comment }}
+               </h5>
+              </li>
+              <br>
+           </div>
+          {% empty %}
+             <div>
+               <h4>
+                还没有任何评论呢
+              </h4>
+            </div>
+           {% endfor %}
+         </ul>
+        <section class="contact_section layout_padding">
+          <div class="container">
+            <div class='row'>
+              <form action="{% url 'forum' blog.id %}" method='POST'>
+                {% csrf_token %}
+                {{ form.as_div }}
+                <div class="d-flex ">
+                  <button>发布</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        </div>
+		  </div>
+    </div>
+	</div>
+
+</section>
+{% endblock forum %}
+<!-- end contact section -->

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block body_type %}
+<body class="sub_page">
+{% endblock body_type%}
+
+
+
+{% block slider %}
+<section class="brand_section layout_padding">
+  <div class="container">
+    <h2>
+      <a href="{% url 'index' %}">返回</a>
+    </h2>
+    <div class="heading_container">
+      <h2>
+        
+      </h2>
+    </div>
+    <div class="col-md-6">
+      <div class="heading_container">
+        <h1>
+         登入
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock slider %}
+
+<!-- users section -->
+{% block users %}
+<section class="contact_section layout_padding">
+  <div class="container">
+    <div class='row'>
+      {% if form.errors %}
+      <div>
+        <h3>
+          账户或用户名错误，请重试.
+        </h3>
+      </div>
+      {% endif %}
+      <div>
+      <form action="{% url 'login' %}" method='POST'>
+        {% csrf_token %}
+        {{ form.as_div }}
+        <div class="d-flex ">
+          <button class="btn-1" >登入</button>
+        </div>
+        <input type="hidden" name="next" value="{% url 'index' %}">
+      </form>
+    </div>
+    </div>
+    <div class="row">
+      <div class="detail-box">
+        <div class="btn-box">
+          <form method="GET" action="{% url 'register'%}">
+            <button class="button">注册</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock users %}
+<!-- end users section -->

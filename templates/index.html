@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block body_type %}
+<body>
+{% endblock body_type%}
+
+
+
+<!-- slider section -->
+{% block slider %}
+<section class="slider_section ">
+      <div class="play_btn">
+        <a href="">
+          <img src="{% static 'images/play.png' %}" alt="">
+        </a>
+      </div>
+      <div class="number_box">
+        <div>
+          <ol class="carousel-indicators indicator-2">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
+          </ol>
+        </div>
+      </div>
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      关于
+                    </h1>
+                    <div>
+                      <h1>
+                        <span>
+                          论坛
+                        </span>
+                      </h1>
+                    </div>
+                    <p>
+                      我们提供了一个平台
+					            用于交换对于网络方面的看法
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'forum' %}" class="btn-1">
+                        了解更多
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 img-container">
+                  <div class="img-box">
+                    <img src="{% static 'images/forum.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      关于
+                    </h1>
+                    <div>
+                      <h1>
+                        <span>
+                          资料
+                        </span>
+                      </h1>
+                    </div>
+                    <p>
+                      我们搜集了一些有关于网络瘫痪的资料
+					            希望能够在某些方面帮助到您
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'topic' %}" class="btn-1">
+                        了解更多
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 img-container">
+                  <div class="img-box">
+                    <img src="{% static 'images/data.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      关于我们
+                    </h1>
+                    <div>
+                      <h1>
+                        <span>
+                          网络瘫痪
+                        </span>
+                        研究小组
+                      </h1>
+                    </div>
+                    <p>
+                      我们为了我们的研究课题而创立此网站
+					            并借此来发布我们的研究成果
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'about' %}" class="btn-2">
+                        了解更多
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 img-container" >
+                  <div class="img-box" >
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+{% endblock slider %}
+<!-- end slider section -->
